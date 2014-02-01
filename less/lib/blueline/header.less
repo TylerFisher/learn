@@ -1,0 +1,101 @@
+#initiative-info {
+  font-family: @sansFontFamily;
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 14px 20px 11px;
+  line-height: 1.4em;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#530063', EndColorStr='#530063')"; /* IE8 */
+  background-image: linear-gradient(bottom, rgb(50,33,63) 0%, rgb(83,0,99) 32%, rgb(83,0,99) 44%);
+  background-image: -o-linear-gradient(bottom, rgb(50,33,63) 0%, rgb(83,0,99) 32%, rgb(83,0,99) 44%);
+  background-image: -moz-linear-gradient(bottom, rgb(50,33,63) 0%, rgb(83,0,99) 32%, rgb(83,0,99) 44%);
+  background-image: -webkit-linear-gradient(bottom, rgb(50,33,63) 0%, rgb(83,0,99) 32%, rgb(83,0,99) 44%);
+  background-image: -ms-linear-gradient(bottom, rgb(50,33,63) 0%, rgb(83,0,99) 32%, rgb(83,0,99) 44%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(50,33,63)),
+    color-stop(0.32, rgb(83,0,99)),
+    color-stop(0.44, rgb(83,0,99))
+    );
+  border-bottom: 2px solid #272727;
+}
+.knightlab-tab {
+    background-color: #FFFFFF;
+}
+.knightlab-tab  > a{
+  background-color: #FFFFFF;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.4);;
+  display: inline-block;
+  height: 51px;
+  margin-bottom: -11px;
+  padding: 0 !important;
+  width: 162px;
+  span {
+    background-image: url("../assets/logos/logo_horizontal_NOtagline_615x205_transparent_padded.png");
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    display: inline-block;
+    height: 51px;
+    margin-bottom: -11px;
+    padding: 0;
+    text-indent: -9999px;
+    width: 162px;
+  }
+}
+ .knightlab-tab  > a:hover  {
+  opacity: 1;
+  background-color: #fff !important;
+}
+.knightlab-tab  > a:hover span {
+  opacity: .9;
+}
+
+
+@media (max-width: 767px) {
+  #initiative-info {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+
+@media (min-width: 979px) {
+.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 940px;
+}
+}
+
+@media (max-width: 979px) {
+  .knightlab-tab {
+      background-color: transparent;
+  }
+  .knightlab-tab  > a{
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: inline-block;
+    height: auto;
+    margin-bottom: 0;
+    padding: 9px 15px !important;
+    width: auto;
+    span {
+      background-image: none;
+      background-color: transparent;
+      border-radius: 0;
+      display: inline;
+      margin-bottom: 0;
+      padding: 0;
+      text-indent: 0;
+    }
+  }
+  .knightlab-tab  > a:hover  {
+    background-color: transparent !important;
+  }
+  .knightlab-tab  > a:hover span {
+    opacity: 1;
+  }
+}

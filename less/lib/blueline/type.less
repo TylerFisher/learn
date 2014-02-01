@@ -1,0 +1,358 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 @baseLineHeight / 2;
+  line-height: @baseLineHeight * 1.27; // ~28px
+}
+.lead {
+  margin-bottom: @baseLineHeight;
+  font-size: @baseFontSize * 1.5;
+  font-weight: 200;
+  line-height: @baseLineHeight * 1.5;
+}
+
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: 14px base font * 85% = about 12px
+small   { font-size: 85%; }
+
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+// Utility classes
+.muted               { color: @grayLight; }
+a.muted:hover,
+a.muted:focus        { color: darken(@grayLight, 10%); }
+
+.text-warning        { color: @warningText; }
+a.text-warning:hover,
+a.text-warning:focus { color: darken(@warningText, 10%); }
+
+.text-error          { color: @errorText; }
+a.text-error:hover,
+a.text-error:focus   { color: darken(@errorText, 10%); }
+
+.text-info           { color: @infoText; }
+a.text-info:hover,
+a.text-info:focus    { color: darken(@infoText, 10%); }
+
+.text-success        { color: @successText; }
+a.text-success:hover,
+a.text-success:focus { color: darken(@successText, 10%); }
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: (@baseLineHeight / 2) 0;
+  font-family: @headingsFontFamily;
+  font-weight: @headingsFontWeight;
+  line-height: @baseLineHeight;
+  color: @headingsColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+    color: @grayLight;
+    padding-left: 10px;
+  }
+}
+
+h1,
+h2,
+h3 { line-height: @baseLineHeight * 2; }
+
+h1 { font-size: @baseFontSize * 2.75; } // ~38px
+h2 { font-size: @baseFontSize * 2.15; } // ~32px
+h3 { font-size: @baseFontSize * 1.45; } // ~24px
+h4 { font-size: @baseFontSize * 1.25; } // ~18px
+h5 { font-size: @baseFontSize; }
+h6 { font-size: @baseFontSize * 0.85; } // ~12px
+
+h1 small { font-size: @baseFontSize * 1.75; } // ~24px
+h2 small { font-size: @baseFontSize * 1.25; } // ~18px
+h3 small { font-size: @baseFontSize; }
+h4 small { font-size: @baseFontSize; }
+
+// Blueline-specific
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { color: @grayDarker; }
+
+h1 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+h2 {
+  font-size: @baseFontSize * 1.875;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: @baseFontSize * 1.7;
+}
+
+h4, h5, h6 {
+  font-family: @serifFontFamily;
+  font-weight: bold;
+}
+h6 {
+  text-transform: uppercase;
+}
+
+h2.intro {
+  clear: both;
+  color: #CA5529;
+  background: -webkit-linear-gradient(left top, rgb(215,103,56) 17%, rgb(187,62,37) 37%, rgb(187,62,37) 54%, rgb(255,134,84) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: @sansFontFamily;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: lighter;
+  height: auto;
+  line-height: 1.2em;
+  margin: 40px auto;
+  max-width: 1140px;
+  text-indent: 0;
+}
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: (@baseLineHeight / 2) - 1;
+  margin: @baseLineHeight 0 (@baseLineHeight * 1.5);
+  border-bottom: 1px solid @grayLighter;
+}
+
+
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 @baseLineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: @baseLineHeight;
+  padding: 2px 0 6px;
+}
+ul {
+    list-style: square;
+}
+
+// Remove default list styles
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Single-line list items
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+  > li {
+    display: inline-block;
+    .ie7-inline-block();
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl {
+  margin-bottom: @baseLineHeight;
+}
+dt,
+dd {
+  line-height: @baseLineHeight;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: @baseLineHeight / 2;
+}
+// Horizontal layout (like forms)
+.dl-horizontal {
+  .clearfix(); // Ensure dl clears floats if empty dd elements present
+  dt {
+    float: left;
+    width: @horizontalComponentOffset - 20;
+    clear: left;
+    text-align: right;
+    .text-overflow();
+  }
+  dd {
+    margin-left: @horizontalComponentOffset;
+  }
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: @baseLineHeight 0;
+  border: none;
+  border-top: 4px double #eee;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted @grayLight;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+blockquote {
+  margin: 0 0 @baseLineHeight;
+  border-left: 4px solid @grayLighter;
+  background-color: #FAFAFA;
+  font-family: @serifFontFamily;
+  font-size: 1.1em;
+  font-style: italic;
+  line-height: 1.5em;
+  padding: 1em 1em 0;
+  overflow: auto;
+  p {
+    margin: 3px 0 22px;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+  }
+  small {
+    display: block;
+    line-height: @baseLineHeight;
+    color: @grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+
+  // Float right with text-align: right
+  &.pull-right {
+    float: right;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid @grayLighter;
+    border-left: 0;
+    p,
+    small {
+      text-align: right;
+    }
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014';
+      }
+    }
+  }
+}
+*[data-pullquote]:before {
+    border-bottom: medium double #DDDDDD;
+    border-top: medium double #DDDDDD;
+    color: #CA4D1D;
+    content: attr(data-pullquote);
+    float: right;
+    font-family: @altSerifFontFamily;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 1.3em;
+    margin: 7px 0 0.5em 35px;
+    padding: 22px 1px 20px;
+    width: 34%;
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+.editor-note,
+.editors-note  {
+  background-color: @grayLighter;
+  border-top: 4px solid #CA4D1D;
+  color: @gray;
+  font-family: @sansFontFamily;
+  line-height: 1.5em;
+  padding: 18px 24px;
+  margin: 1.4em 0 1.6em;
+  &:before  {
+    content:"Editor's Note: ";
+    color: #CA4D1D;
+    padding-right: 3px;
+  }
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: @baseLineHeight;
+  font-style: normal;
+  line-height: @baseLineHeight;
+}
+
+.preheading {
+  font-family: @sansFontFamily;
+  text-transform: uppercase;
+  color: @klOrangeType;
+  margin-bottom: -5px;
+  display: block;
+}
+
+.byline {
+  font-family: @sansFontFamily;
+  text-transform: uppercase;
+  color: @grayLight;
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-transform: uppercase;
+  }
+}

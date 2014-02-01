@@ -162,7 +162,6 @@ def render():
     from flask import g
 
     update_copy()
-    sync_assets()
     update_data()
     less()
     jst()
