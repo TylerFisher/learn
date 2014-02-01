@@ -19,7 +19,7 @@ def index():
     """
     return render_template('index.html', **make_context())
 
-@app.route('/lesson')
+@app.route('/lesson.html')
 def lesson():
     """
     Render the lesson detail page
