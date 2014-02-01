@@ -14,4 +14,17 @@
 
 {% block content %}
 
+<div class="lessons">
+    {% for row in COPY.lesson_intros %}
+        <div class="lesson_title">
+            <h2>
+                <a href="/lesson/{{ row[0] }}">{{ row[1] }}</a>
+            </h2>
+        </div>
+        <div class="lesson_desc">
+            <p>{{ row[2] }}</p>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
