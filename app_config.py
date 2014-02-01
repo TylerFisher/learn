@@ -31,9 +31,8 @@ PROJECT_FILENAME = 'learn'
 """
 DEPLOYMENT
 """
-PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
-STAGING_S3_BUCKETS = ['stage-apps.npr.org']
-ASSETS_S3_BUCKET = 'assets.apps.npr.org'
+PRODUCTION_S3_BUCKETS = ['learn.knightlab.com']
+STAGING_S3_BUCKETS = ['learn.knilab.com']
 
 PRODUCTION_SERVERS = ['cron.nprapps.org']
 STAGING_SERVERS = ['50.112.92.131']
@@ -83,8 +82,8 @@ COPY_GOOGLE_DOC_KEY = '0AlXMOHKxzQVRdHZuX1UycXplRlBfLVB0UVNldHJYZmc'
 """
 SHARING
 """
-PROJECT_DESCRIPTION = 'An opinionated project template for (mostly) server-less apps.'
-SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKETS[0], PROJECT_SLUG)
+PROJECT_DESCRIPTION = 'Join the future of journalism.'
+SHARE_URL = 'http://%s/' % (PRODUCTION_S3_BUCKETS[0])
 
 # Will be resized to 120x120, can't be larger than 1MB
 TWITTER_IMAGE_URL = ''
@@ -97,13 +96,6 @@ FACEBOOK_APP_ID = '138837436154588'
 # Thumbnail image for Google News / Search.
 # No documented restrictions on resolution or size
 GOOGLE_IMAGE_URL = TWITTER_IMAGE_URL
-
-NPR_DFP = {
-    'STORY_ID': '1002',
-    'TARGET': 'homepage',
-    'ENVIRONMENT': 'NPRTEST',
-    'TESTSERVER': 'false'
-}
 
 """
 SERVICES
