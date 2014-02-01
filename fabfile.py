@@ -330,7 +330,6 @@ def bootstrap():
 
     local('npm install less universal-jst -g --prefix node_modules')
 
-    assets_down()
     update_copy()
     update_data()
 
