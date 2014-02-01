@@ -1,5 +1,6 @@
 // globals
 var $lesson = null;
+var lessonNumber = null;
 
 
 // funcs
@@ -14,6 +15,7 @@ var getParameterByName = function(name) {
 
 var renderLesson = function() {
     var context = LESSON;
+    context.lessonNumber = parseInt(lessonNumber);
     var html = JST.components(context);
 
     $lesson.html(html)
@@ -21,12 +23,14 @@ var renderLesson = function() {
 
 // enclosure
 var onDocumentReady = function() {
-    $lesson = $('#lesson');
-    var lessonNumber = getParameterByName('id');
+    if (getParameterByName('id') !== '') {
+        $lesson = $('#lesson');
+        lessonNumber = getParameterByName('id');
 
-    window.LESSON = COPY['lesson_' + lessonNumber]
+        window.LESSON = COPY['lesson_' + lessonNumber]
 
-    renderLesson();
+        renderLesson();
+    }
 }
 
 $(document).ready(onDocumentReady)
