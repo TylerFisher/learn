@@ -60,13 +60,9 @@
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#lesson_0">Lesson 0</a></li>
-                                    <li><a href="#lesson_1">Lesson 1</a></li>
-                                    <li><a href="#lesson_2">Lesson 2</a></li>
-                                    <li><a href="#lesson_3">Lesson 3</a></li>
-                                    <li><a href="#lesson_4">Lesson 4</a></li>
-                                    <li><a href="#lesson_5">Lesson 5</a></li>
-
+                                    {% for row in COPY.lesson_intros %}
+                                        <li><a href="/lesson?id={{ row[0]}}">Lesson {{ row[0] }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
 

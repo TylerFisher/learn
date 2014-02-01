@@ -19,6 +19,14 @@ def index():
     """
     return render_template('index.html', **make_context())
 
+@app.route('/lesson')
+def lesson():
+    """
+    Render the lesson detail page
+    """
+
+    return render_template('lesson.html', **make_context())
+
 @app.route('/widget.html')
 def widget():
     """
@@ -36,7 +44,7 @@ def test_widget():
 @app.route('/test/test.html')
 def test_dir():
     return render_template('index.html', **make_context())
-    
+
 app.register_blueprint(static.static)
 
 # Boilerplate

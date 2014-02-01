@@ -1,17 +1,32 @@
-$(function() {
-    // No box ad when we have adhesion, so #main-content gets 12 columns
-    if (window.innerWidth <= 1024){
-        $('#main-content').removeClass('col-md-8').addClass('col-md-12');
-    }
+// globals
+var $lesson = null;
 
-    // Templating example
-    var context = $.extend(APP_CONFIG, {
-        'template_path': 'jst/example.html',
-        'config': JSON.stringify(APP_CONFIG, null, 4),
-        'copy': JSON.stringify(COPY, null, 4)
-    });
 
-    var html = JST.example(context);
+// funcs
+var getParameterByName = function(name) {
+    name = name.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
 
-    $('#template-example').html(html);
-});
+    var regex = new RegExp("[\\?&]" + name + '=([^&#]*)');
+    var results = regex.exec(location.search);;
+
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var renderLesson = function() {
+    var context = LESSON;
+    var html = JST.components(context);
+
+    $lesson.html(html)
+}
+
+// enclosure
+var onDocumentReady = function() {
+    $lesson = $('#lesson');
+    var lessonNumber = getParameterByName('id');
+
+    window.LESSON = COPY['lesson_' + lessonNumber]
+
+    renderLesson();
+}
+
+$(document).ready(onDocumentReady)
