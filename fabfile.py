@@ -362,9 +362,9 @@ def _deploy_to_s3(path='.gzip'):
     sync_assets = 'aws s3 sync %s/ %s --acl "public-read" --cache-control "max-age=86400" --region "us-east-1"'
 
     for bucket in app_config.S3_BUCKETS:
-        local(sync % (path, 's3://%s/%s/' % (bucket, app_config.PROJECT_SLUG)))
-        local(sync_gzip % (path, 's3://%s/%s/' % (bucket, app_config.PROJECT_SLUG)))
-        local(sync_assets % ('www/assets/', 's3://%s/%s/assets/' % (bucket, app_config.PROJECT_SLUG)))
+        local(sync % (path, 's3://%s/' % (bucket)))
+        local(sync_gzip % (path, 's3://%s' % (bucket)))
+        local(sync_assets % ('www/assets/', 's3://%s/assets/' % (bucket)))
 
 def assets_down(path='www/assets'):
     """
